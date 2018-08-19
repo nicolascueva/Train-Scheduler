@@ -1,11 +1,6 @@
-/*body{
-    background-image: url(train-4.jpg);
-}*/
 
 #title-image{
-    background-color: bisque;
-
-    
+    background-color: bisque;   
 }
 
 #mainSection{
@@ -15,12 +10,10 @@
 #trainTitle{
     background-color: bisque;
     font-weight: bold;
-    font-size: 20px;
-    
+    font-size: 20px;  
 }
 #formTitle{
-    background-color: bisque;
-    
+    background-color: bisque;   
 }
 
 #formBox{
