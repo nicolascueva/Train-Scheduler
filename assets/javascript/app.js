@@ -53,6 +53,34 @@ $(document).ready(function () {
 
     });
 
+    database.ref().on("child_added", function (childSnapshot) {
+        console.log(childSnapshot.val());
+
+        // Store everything into a variable.
+        var trainName = childSnapshot.val().trainName;
+        var destination = childSnapshot.val().destination;
+        var frequency = childSnapshot.val().frequency;
+
+
+        // Employee Info
+        console.log(trainName);
+        console.log(destination);
+        console.log(frequency);
+
+        // Create the new row
+        var newRow = $("<tr>").append(
+            $("<td>").text(trainName),
+            $("<td>").text(destination),
+            $("<td>").text(frequency),
+        );
+
+        // Append the new row to the table
+        $("#displayNewRow").append(newRow);
+
+
+
+    });
+
 
 
 
