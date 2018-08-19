@@ -12,16 +12,17 @@
 </head>
 
 <body>
-    <div class=" container jumbotron bg-info">
-        <h1 class="display-5 text-center">Train Scheduler</h1>
+    <div class=" container jumbotron" id="title-image">
+        <h1 class="display5 text-center">Train Scheduler</h1>
 
-        <hr class="my-4">
+        <hr class="my-1">
 
     </div>
 
-    <div class="container bg-secondary">
-        <div>Current Train Schedule</div>
-        <table class="table">
+    <div class="container">
+        <div class="text-center" id="trainTitle">Current Train Schedule</div>
+
+        <table class="table" id="mainSection">
             <thead>
                 <tr>
                     <th scope="col">Train Name</th>
@@ -38,8 +39,9 @@
         </table>
     </div>
 
-    <div class="container bg-secondary">
-        <div>Add Train</div>
+    <div class="container" id="formBox">
+        <div class="text-center" id="formTitle">Add Train</div>
+
         <form>
             <div class="form-group">
                 <label for="formGroupExampleInput">Train Name</label>
@@ -57,7 +59,7 @@
                 <label for="formGroupExampleInput">Frequency</label>
                 <input type="number" class="form-control" id="frequency-input">
             </div>
-            <button type="submit" class="btn btn-primary" id="addNewTrain">Submit</button>
+            <button type="submit" class="btn" id="addNewTrain">Submit</button>
         </form>
     </div>
 

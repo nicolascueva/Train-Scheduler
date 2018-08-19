@@ -1,3 +1,34 @@
 /*body{
-    background-image: url(train-2.jpg);
+    background-image: url(train-4.jpg);
 }*/
+
+#title-image{
+    background-color: bisque;
+
+    
+}
+
+#mainSection{
+    background-color: rgb(154, 241, 241);
+}
+
+#trainTitle{
+    background-color: bisque;
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+#formTitle{
+    background-color: bisque;
+    
+}
+
+#formBox{
+    background-color:bisque;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.btn{
+    background-color: rgb(154, 241, 241)  
+}
