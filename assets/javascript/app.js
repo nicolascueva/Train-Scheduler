@@ -54,24 +54,49 @@ $(document).ready(function () {
     });
 
     database.ref().on("child_added", function (childSnapshot) {
-        console.log(childSnapshot.val());
+        //console.log(childSnapshot.val());
 
         // Store everything into a variable.
         var trainName = childSnapshot.val().trainName;
         var destination = childSnapshot.val().destination;
         var frequency = childSnapshot.val().frequency;
-
-
+        var firstTrain = childSnapshot.val().firstTrain;
         // Employee Info
-        console.log(trainName);
-        console.log(destination);
-        console.log(frequency);
+        // console.log(trainName);
+        //console.log(destination);
+        //console.log(frequency);
+
+        // First Time (pushed back 1 year to make sure it comes before current time)
+        var firstTimeConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
+        // console.log(firstTimeConverted);
+
+        // Current Time
+        var currentTime = moment();
+        console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
+
+        // Difference between the times
+        var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+        console.log("DIFFERENCE IN TIME: " + diffTime);
+
+        // Time apart (remainder)
+        var tRemainder = diffTime % frequency;
+        console.log(tRemainder);
+
+        // Minute Until Train
+        var minAway = frequency - tRemainder;
+        console.log("MINUTES TILL TRAIN: " + minAway);
+
+        // Next Train
+        var nextArrival = moment().add(minAway, "minutes").format("hh:mm a");
+        console.log("ARRIVAL TIME: " + moment(nextArrival).format("hh:mm"));
 
         // Create the new row
         var newRow = $("<tr>").append(
             $("<td>").text(trainName),
             $("<td>").text(destination),
             $("<td>").text(frequency),
+            $("<td>").text(nextArrival),
+            $("<td>").text(minAway),
         );
 
         // Append the new row to the table
